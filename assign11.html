@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+<head>
+<link rel="stylesheet" type="text/css" href="assign08.css">
+<title>Form Validation</title>
+</head>
+<body>
+
+<div class = "center">
+<h2>Form Validation</h2>
+
+
+    
+       <p>Please fill out the following information to receive delicious sweets</p>
+
+    <form id = "myForm" action = "assign11.php" method = "get">
+        First Name:<br>
+          <input type="text" name="firstname" id = "name1"><br>
+         <p id="name1Error"></p>
+        Last Name:<br>
+          <input type="text" name="lastname" id = "name2"><br>
+          <p id="name2Error"></p>
+          
+          Address:<br>
+        <textarea name="address"></textarea><br>
+        Phone number:<br>
+          <input type="text" name="phone" id = "phone"><br>
+          <p id="phoneError"></p>
+          <input type="checkbox" id = "check1" name="cookies">Cookies - $1.99<br>
+          <input type="checkbox" id = "check2" name="brownies">Brownies - $2.99<br>
+          <input type="checkbox" id = "check3" name="doughnuts">Doughnuts - $1.49<br>
+          <input type="checkbox" id = "check4" name="cupcakes">Cupcakes - $1.49<br>
+          
+          <p name = "total_cost" class="total"></p>
+          
+          <input type="radio" name="card" value="Visa">Visa<br>
+          <input type="radio" name="card" value="Mastercard">Mastercard<br>
+          <input type="radio" name="card" value="American Express">American Express<br>
+          
+          <br>
+          
+          
+           Credit Card #:<br>
+          <input type="text" name="credit_card" id = "credit"><br>
+          <p id="creditError"></p>
+          Credit Card Expiration Date:<br>
+          <input type="text" name="exp_date" id = "expDate"><br>
+          <p id="expError"></p><br> 
+          <p id="demo"></p>
+          
+          
+    
+    <br>
+    
+    <button type="reset" value = "Reset">Reset</button>
+    <input type="button" onclick = "myFunction()" value = "Submit" name = "valid"></input>
+  </form>
+</div>
+
+<script src="assign11.js"></script>
+
+</body>
+</html>
+

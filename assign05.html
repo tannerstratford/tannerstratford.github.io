@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta name = "viewport" content="width=device-width, initial-scale=1.0">
+<title>Stratford Sweets</title>
+<style>
+ *{
+   box-sizing: border-box;
+ }
+ .row::after{
+   content: "";
+   clear: both;
+   display: table;
+ }
+ 
+ [class*="col-"]{
+   float: left;
+   padding: 10px;
+ }
+ 
+ html{
+ font-family: "Arial";
+ }
+ 
+[class*="col-"] {
+  width: 100%;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: DodgerBlue;
+  border: 20px dotted black;
+  justify-content: center;
+  }
+
+.flex-container > div {
+  background-color: #fff;
+  width: 500px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  border: 2px solid black;
+}
+
+/* For phones */
+img {width: 70%;}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  
+  img {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  
+  img {width: 100%;}
+}
+header{
+  padding: 3px;
+  border: 5px solid skyblue;
+}
+
+</style>
+</head>
+
+<body style = "text-align: center">
+<div style = "background-color: pink;">
+<header style = "font-family: verdana">
+  <h1>Stratford Sweets</h1>
+</header>
+<p>Come on and get the greatest sweets and treats of all time! 12345 Candycane lane, open until 7</p>
+</div>
+
+<br>
+
+  <div class="flex-container">
+  <div>
+  <a href = "cookies1.jpg">
+    <img src = "cookies1.jpg" alt = "cookies">
+  </a>
+  </div>
+  <div>
+  <a href = "brownies.jpg">
+    <img src = "brownies.jpg" alt = "brownies">
+  </a>
+  </div>
+  <div>
+  <a href = "doughnuts.jpg">
+    <img src = "doughnuts.jpg" alt = "doughnuts">
+  </a>
+  </div>
+  <div>
+  <a href = "cupcakes.jpg">
+    <img src = "cupcakes.jpg" alt = "cupcakes">
+  </a>
+  </div>
+  <div>
+  <a href = "sundae.jpg">
+    <img src = "sundae.jpg" alt = "sundae">
+  </a>
+  </div>
+  </div>
+
+<div style = "background-color: pink">
+<header>
+<h1>Order Online</h1>
+</header>
+<br>
+<form action="action_page.html">
+
+    First name:<br>
+          <input type="text" name="firstname"><br>
+        Last name:<br>
+          <input type="text" name="lastname"><br>
+        <br>
+    
+        <input type="checkbox" name="option" value="cookies">Cookies (2 for a dollar)<br>
+      <input type="checkbox" name="option" value="brownies">Brownie (1 for a dollar)<br>
+      <input type="checkbox" name="option" value="doughnuts">Doughnuts (2 for a dollar)<br>
+      <input type="checkbox" name="option" value="cupcakes">Cupcake (1 for a dollar)<br>
+      <input type="checkbox" name="option" value="sundae">Sundae (1 for 3 dollars)<br>
+    
+    <br>
+    <input type="submit" value="Submit">
+    <input type="reset">
+    </form>
+</div>
+<div>
+<footer>
+  <p>This is the bottom of my webpage</p>
+</footer>
+</div>
+</body>
+</html>

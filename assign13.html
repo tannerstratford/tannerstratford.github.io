@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Music Festival</title>
+<link rel="stylesheet" type="text/css" href="assign07.css">
+</head>
+<body>
+
+<div class = "center">
+  <h1>Piano Festival Competition Registration</h1>
+</div>
+
+<div class = "center" style = "background-color: skyblue">
+  <form action = "./assign13.php" id = "theForm" method="POST">
+    <h3>Performance Type:</h3>
+    <div style="text-align: left; transform: translateX(45%)">
+    <input type = "radio" name = "performance" id = "solo" value = "solo" onclick = "check()" required>Solo<br>
+    <input type = "radio" name = "performance" id = "duet" value = "duet" onclick = "check()" required>Duet<br>
+    <input type = "radio" name = "performance" id = "concerto" value = "concerto" onclick = "check()" required>Concerto<br>
+    </div>
+        
+    <h3>First Name:</h3>
+    <input type="text" name="first_name" id = "firstName" required><br>
+         
+    <h3>Last Name:</h3>
+    <input type="text" name="last_name" id = "lastName" required><br>
+          
+    <h3>Student ID:</h3>
+    <input type="text" name="student_id" id = "ID" required><br><br>
+        
+    <p id = "type"></p>
+        
+        
+    <h3>Skill Level:</h3>
+    <div style = "text-align: left; transform: translateX(45%)">
+    <input type = "radio" name = "skill" value = "beginner" required>Beginner<br>
+    <input type = "radio" name = "skill" value = "intermediate" required>Intermediate<br>
+    <input type = "radio" name = "skill" value = "pre-advanced" required>Pre-Advanced<br>
+    <input type = "radio" name = "skill" value = "advanced" required>Advanced<br>
+    </div>
+    
+    <br>
+        
+    <h3>Instruments:</h3>
+    <div style = "text-align: left; transform: translateX(45%)">
+    <input type="checkbox" value = "piano" name="instruments">Piano<br>
+    <input type="checkbox" value = "voice" name="instruments">Voice<br>
+    <input type="checkbox" value = "string" name="instruments">String<br>
+    <input type="checkbox" value = "organ" name="instruments">Organ<br>
+    <input type="checkbox" value = "other" name="instruments">Other<br>
+    </div>
+        
+        
+    <h3>Location:</h3>
+    <label for="location"></label>
+          
+        
+    <select id="location" name = "location">
+      <option value="Snow">Snow</option>
+      <option value="Austin">Austin</option>
+      <option value="Taylor">Taylor</option>
+      <option value="Smith">Smith</option>
+  
+    </select>
+    
+    <br>
+        
+        
+    <h3>Room #:</h3>
+    <input type="text" name="room" id = "room" required><br><br>
+          
+          
+    <h3>Time Slot</h3>
+    <label for="hours"></label>
+          
+        
+    <select id="hours" name = "time_slot">
+      <option value="8am">8am</option>
+      <option value="9am">9am</option>
+      <option value="10am">10am</option>
+      <option value="11am">11am</option>
+  
+    </select>
+    
+    <br>
+    <br>
+    <br>
+    
+    <input type="submit" value="Register">
+    <button type="reset" name = "clear" value = "Reset">Clear</button>
+
+  </form>
+  
+  <div id = "result"></div>
+  </div>
+
+<script>
+
+function check(){
+var nameInput = "";
+nameInput += "<h3>Second Performer: </h3> <h3>First Name:</h3>" + "<input type='text' name='first_name_2' id = 'firstName' required><br>" + "<h3>Last Name:</h3>" + " <input type='text' name='last_name_2' id = 'lastName' required><br>" + "<h3>Student ID:</h3>" + " <input type='text' name='student_id_2' id = 'ID' required><br>";
+
+if (document.getElementById("duet").checked == true)
+{
+   document.getElementById("type").innerHTML = nameInput;
+}
+else
+{
+  document.getElementById("type").innerHTML = "";
+}
+
+}
+
+let theForm = document.getElementById("theForm");
+theForm.addEventListener('submit', submitForm);
+
+function submitForm(event) {
+  event.preventDefault();
+
+  let formData = new FormData(theForm);
+  let xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+  if (this.readyState == 4 && this.status == 200) {
+    console.log(this.responseText);
+    let result = JSON.parse(this.responseText);
+    let h = "";
+    let count = 1;
+    for (person of result) {
+      h += "<h2>Performance # " + count + "</h2>";
+      count++;
+      h += "<div style = 'background-color: beige; width: 50%; transform: translateX(45%); border: 2px solid black'>";
+      h += "<p> Performance type: " + person.performance + "</p>";
+      h += "<p>" + person.firstname + " " + person.lastname + "- ID: " + person.ID + "</p>";
+      if (document.getElementById("duet").checked == true) {
+        h += "<p>" + person.firstname_2 + " " + person.lastname_2 + "-ID: " + person.ID2 + "</p>";
+      }
+      h += "<p> Skill level: " + person.skill + "</p>"; 
+      h += "<p> Instrument: " + person.instrument + "</p>";
+      h += "<p> Location: " + person.location + ", Room " + person.room + "</p>";
+      h += "<p> Time: " + person.timeslot + "</p>";
+      h += "</div>";
+      }
+      document.getElementById('result').innerHTML = h;
+      }
+
+  };
+  xhr.open("POST", "assign13.php");
+  xhr.send(formData);
+
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+img{
+    text-align: center;
+    margin: auto;
+    }
+
+  .center {
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    border: 2px solid black;
+    padding: 10px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 1px;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .box {
+    background-color: beige;  
+    padding: 5px; 
+    border: 2px solid black; 
+    border-radius: 5px;
+    }
+  .parallax {
+  /* The image used */
+  background-image: url("hogwarts.jpg");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  li {
+    float: left;
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #4caf50;
+  }
+  table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  
+}
+table.center{
+  margin-left:auto;
+  margin-right:auto;
+}

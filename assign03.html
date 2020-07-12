@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Tanner Stratford's Home Page</title>
+  <style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse; 
+  }
+  table.center{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  img{
+    z-index: 2
+    }
+
+  .center {
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    border: 2px solid black;
+    padding: 10px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 1px;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  </style>
+</head>
+<body style = "background-color: #99ccff">
+  <header>
+    <div style = "text-align: center; background-color: beige; border: solid black; width: 80%; margin: auto;">
+      <h1 style = "color: blue">Welcome to Tanner Stratford's Home Page</h1>
+        <a href = "#footer">Jump to bottom</a>
+    </div>
+  </header>
+  <br>
+
+  <div class = "center" style = "background-color: beige">
+      <article>
+        <header>
+          <h3 style = "color: gray; font-family:verdana">About me</h3>
+        </header>
+
+        <p style = "font-family:arial">My name is <del>Batman</del> Tanner Stratford. I am from <del>Gotham City</del> Murrieta, California, and am currently studying computer science. I really love this major, even though it can get quite difficult sometimes. I am engaged to Sophia Cadenhead, the lovely lady next to me in the pictures below. I am <i>extremely</i> excited to be learning about web development this semester. I have always been interested in how people make websites, and I'm happy to be able to have this <b>opportunity to learn</b>. I think that this is going to be an amazing semester. Below is a link to my assignments that I will be completing this semester in CS213.</p>
+      </article>
+    <p>
+      <a href = "index.html">CS 213 assignments</a>
+    </p>
+  </div>
+
+  <hr style = "border-color: black">
+
+  <div style = "text-align: center" id = "photo">
+    <div class = "row">
+      <div class = "column">
+        <img src = "tanner_and_sophia.jpeg" alt="Tanner and Sophia" style = "width:75%;height:75%;">
+      </div>
+      <div class = "column">
+        <a href = "https://www.instagram.com/runrunphia/">
+          <img src = "tanner_and_sophia2.jpeg" alt="Tanner and Sophia" style = "width:75%;height:75%;">
+        </a>
+      </div>
+      <div class = "column">
+        <a href = "https://www.google.com/search?safe=active&biw=1536&bih=706&tbm=isch&sxsrf=ACYBGNT5og18KlNAv_KhADvlAK4UVbjVXA%3A1579837114963&sa=1&ei=umYqXv29OtKQtQX_5rAo&q=batman+secret+identity+%3D+tanner+stratford&oq=batman+secret+identity+%3D+tanner+stratford&gs_l=img.3..35i39.0.0..3494...0.0..0.97.191.2......0......gws-wiz-img.R1OtRVmYz44&ved=0ahUKEwj9gqnwp5vnAhVSSK0KHX8zDAUQ4dUDCAc&uact=5">
+        <img src = "tanner_and_sophia3.jpeg" alt="Tanner and Sophia" style = "width:75%;height:75%;">
+        </a>
+      </div>
+    </div>
+   </div>  
+
+  <div style = "text-align: center; font-family: brush script mt; font-size:200%">
+  <blockquote cite = "https://blog.hubspot.com/sales/famous-quotes">
+"The greatest glory in living lies not in never falling, but in <b>rising</b> every time we fall." -Nelson Mandela
+  </blockquote>
+  </div>
+
+  <hr>
+
+  <div style = "text-align: center">
+    <table class = "center" style = "width:60%; background-color: beige">
+    <tr>
+      <th>Course #</th>
+      <th>Course Description</th>
+      <th>Sec #</th>
+      <th>Class Time</th>
+      <th>Class Location</th>
+    </tr>
+    <tr>
+      <td>CS 213</td>
+      <td>Web Engineering</td>
+      <td>3</td>
+      <td>NA</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <td>CS 235</td>
+      <td>Data Structures</td>
+      <td>4</td>
+      <td>NA</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <td>FCS 340</td>
+      <td>Money Management</td>
+      <td>7</td>
+      <td>NA</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <td>FDENG301</td>
+      <td>Advanced Writing and Research</td>
+      <td>E3</td>
+      <td>NA</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <td>Rel 275C</td>
+      <td>Teachings of Book of Mormon</td>
+      <td>54</td>
+      <td>NA</td>
+      <td>NA</td>
+    </tr>
+    </table>
+  </div>
+
+  <br>
+
+  <div style = "background-color: beige; width: 50%; padding: 5px; border: 2px solid black; border-radius: 5px;">
+    <p><img src = "quote.jpg" alt="Inspirational quote" style="float: right; position: absolute; transform: translate(105%, -4%); width: 48%; height: 75%; border: 3px solid black; border-radius: 5px;"></p>
+      <p>If you'd like to recieve updates on my weekly adventures <del>fighting crime</del> coding and such, please leave your name and email below.</p>
+    <form action="action_page.html">
+    
+        First name:<br>
+          <input type="text" name="firstname"><br>
+        Last name:<br>
+          <input type="text" name="lastname"><br>
+        Email:<br>
+          <input type="text" name="email"><br>
+    
+      <p>What is your drive? What are you passionate about? Why?</p>
+        <textarea rows="4" cols="50" name="comment">
+        </textarea>
+    <br>
+  
+    
+      <p>Indicate your coding experience level</p>
+  
+      <input type="radio" name="level" value="beginner"> Beginner<br>
+      <input type="radio" name="level" value="intermediate"> Intermediate<br>
+      <input type="radio" name="level" value="advanced"> advanced<br>
+      
+    
+    
+  
+        <p>Put a check next to all of the coding languages you know</p>
+    
+      <input type="checkbox" name="language" value="c++">C++<br>
+      <input type="checkbox" name="language" value="java">Java<br>
+      <input type="checkbox" name="language" value="python">Python<br>
+      <input type="checkbox" name="language" value="other">Other<br>
+    
+  
+      <p>Please indicate your age</p>
+      <select>
+        <option value="under 18">Under 18</option>
+        <option value="18-24">18 - 24</option>
+        <option value="25-44">25-44</option>
+        <option value="45+">45+</option>
+      </select>
+    
+    <br>
+    <input type="submit" value="Submit">
+    <input type="reset">
+    </form>
+  </div>
+    
+  <br>
+    
+  <div>
+    <footer class = "center" style = "background-color: beige">
+      <p id = "footer">This is the end of my webpage. Click <a href = "#photo">here</a> to jump to the images, then click the third image in order to know my vigilante alias.</p>
+    </footer>
+  </div>
+
+</body>
+</html>

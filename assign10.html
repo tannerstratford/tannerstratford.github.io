@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  
+}
+table.center{
+  margin-left:auto;
+  margin-right:auto;
+}
+  .center {
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    border: 2px solid black;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+<div class = "center" id="demo" onload="loadDoc('assign10.php', myFunction)">
+
+<h2>The XMLHttpRequest Files</h2>
+
+<button type="button" onclick="loadDoc('assign10.php', myFunction)">Change Content
+</button>
+
+</div>
+
+<script>
+function loadDoc(url, cFunction) {
+  var xhttp;
+  xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      cFunction(this);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+function myFunction(xhttp) {
+  var json = JSON.parse(xhttp.responseText);
+  var txt = "";
+  for (var i = 0; i < json.length; i++) {
+    var obj = json[i];
+    txt += "<table><tr><td>File Name: " + obj.fileName + "</td>";
+    txt += "<td>File Type: " + obj.fileType +  "</td>";
+    txt += "<td>CWD: " + obj.cwd + "</tr></td></table>";
+    txt += "<button onclick = \"window.open('obj.fileName')\">display file</button>"
+    
+        
+    }
+    document.getElementById("demo").innerHTML =
+  txt;
+  
+}
+</script>
+</body>
+</html>

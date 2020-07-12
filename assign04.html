@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>White Rose Ranch Home Page</title>
+  <style>
+ 
+
+  img{
+    z-index: 2
+    }
+
+  .center {
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    border: 2px solid black;
+    padding: 10px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 1px;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .box {
+    background-color: beige;  
+    padding: 5px; 
+    border: 2px solid black; 
+    border-radius: 5px;
+    }
+  .parallax {
+  /* The image used */
+  background-image: url("landscape.jpg");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  li {
+    float: left;
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #4caf50;
+  }
+  
+  
+    .mySlides {display:none;}
+  </style>
+</head>
+<body class = "parallax">
+
+  <div class = "center" style = "background: rgb(245, 245, 220, .5);">
+      
+        <header>
+          <h1 style = "font-size: 400%; color: black; font-family:brush script mt;">White Rose Ranch</h3>
+        </header>
+
+      
+  </div>
+  
+  <div>
+  <ul>
+    <li><a class = "active" href="assign04.html">Home</a></li>
+    <li><a href="assign04_2.html">Shopping</a></li>
+  </ul>
+  </div>
+
+  <hr style = "border-color: black">
+
+  <div class = "center" style = "width: 70%;">
+  <div id = "photo">
+        <a href = "mercantile1.jpg">
+          <img class = "mySlides" src = "mercantile1.jpg" alt="Tanner and Sophia" style = "width:100%;height:100%;">
+        </a>
+        <a href = "mercantile2.jpg">
+          <img class = "mySlides" src = "mercantile2.jpg" alt="Tanner and Sophia" style = "width:100%;height:100%;">
+        </a>
+        <a href = "mercantile3.jpg">
+        <img class = "mySlides" src = "mercantile3.jpg" alt="Tanner and Sophia" style = "width:100%;height:100%;">
+        </a>
+      <button onclick="plusDivs(-1)">&#10094;</button>
+      <button onclick="plusDivs(1)">&#10095;</button>
+   </div>  
+   </div>
+
+  <div style = "text-align: center; font-family: brush script mt; font-size:200%">
+  <blockquote cite = "https://blog.hubspot.com/sales/famous-quotes">
+"The greatest glory in living lies not in never falling, but in <b>rising</b> every time we fall." -Nelson Mandela
+  </blockquote>
+  </div>
+
+  <hr>
+
+
+  <br>
+
+  <div class = "box" style = "width: 50%; background: rgb(245, 245, 220, .8);">
+    <p><img src = "quote.jpg" alt="Inspirational quote" style="float: right; position: absolute; transform: translate(105%, -4%); width: 48%; height: 75%; border: 3px solid black; border-radius: 5px;"></p>
+      <p>If you'd like to recieve weekly emails and deals, please leave your name and email below.</p>
+    <form action="action_page.html">
+    
+        First name:<br>
+          <input type="text" name="firstname"><br>
+        Last name:<br>
+          <input type="text" name="lastname"><br>
+        Email:<br>
+          <input type="text" name="email"><br>
+    
+      <p>Introduce yourself here. What makes you <i>you?</i></p>
+        <textarea rows="4" cols="50" name="comment">
+        </textarea>
+    <br>
+  
+    
+      <p>Do you live in Riverside County, California? Are you interested in learning about ways you can serve in the community?</p>
+  
+      <input type="radio" name="service" value="yes, interested"> Yes, I am interested<br>
+      <input type="radio" name="service" value="yes, not interested"> Yes, but not interested<br>
+      <input type="radio" name="service" value="no"> No, I do not live by Riverside County<br>
+      
+    
+    
+  
+        <p>Please check the appropriate boxes.</p>
+    
+      <input type="checkbox" name="offers" value="emails">I'd like to be put on the email list<br>
+      <input type="checkbox" name="offers" value="offers">I'd like to receive weekly offers<br>
+      
+  
+      <p>Please indicate your age</p>
+      <select>
+        <option value="under 18">Under 18</option>
+        <option value="18-24">18 - 24</option>
+        <option value="25-44">25-44</option>
+        <option value="45+">45+</option>
+      </select>
+    
+    <br>
+    <input type="submit" value="Submit">
+    <input type="reset">
+    </form>
+  </div>
+    
+  <br>
+    
+  <div>
+    <footer class = "center" style = "background-color: beige; width: 25%">
+      <p id = "footer">This is the end of the webpage</p>
+    </footer>
+  </div>
+  
+  <script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html>

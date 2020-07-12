@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+<head>
+<link rel="stylesheet" type="text/css" href="assign07.css">
+<title>Mortgage Calculator</title>
+</head>
+<body>
+
+<div class = "center">
+<h2>Mortgage Calculator</h2>
+
+
+    
+       <p>Please use our monthly payment calculator to find out what is affordable to you</p>
+    
+    <form id = "myForm" action = "mortgage.php" method = "get">
+        APR:<br>
+          <input type="text" name="APR" id = "apr"><br>
+          <p id="aprError"></p>
+        Loan Term (in years):<br>
+          <input type="text" name="loan_term" id = "term"><br>
+          <p id="termError"></p>
+        Loan Amount (in dollars):<br>
+          <input type="text" name="loan_payment" id = "amount"><br>
+          <p id="amountError"></p>
+          
+          <p id="demo"></p>
+    
+    <input type="submit">
+    
+   
+    
+    <br>
+    
+    <button type="reset" value = "Reset">Clear</button>
+  </form>
+</div>
+
+<script>
+var valid1 = true;
+var valid2 = true;
+var valid3 = true;
+var blank1 = true;
+var blank2 = true;
+var blank3 = true;
+
+document.getElementById("apr").addEventListener("keyup", function(){
+blank1 = false;
+	if (isNaN(document.getElementById("apr").value) || document.getElementById("apr").value > 25 || document.getElementById("apr").value < 0) {
+  		document.getElementById("aprError").innerHTML = "Error: Not a valid number. APR must be between 0 and 25%";
+      valid1 = false; 
+      document.getElementById("apr").style.backgroundColor = "#ffcccb";}
+    else {
+    	document.getElementById("aprError").innerHTML = ""; 
+      valid1 = true;
+      if (document.getElementById("apr").value === "")
+      {
+        document.getElementById("apr").style.backgroundColor = "#ffffff";
+        blank1 = true;
+  //      valid1 = false;
+    }
+      else
+      {
+        blank1 = false;
+        document.getElementById("apr").style.backgroundColor = "#90EE90" ;
+        }
+      }
+      
+});
+
+document.getElementById("term").addEventListener("keyup", function(){
+blank2 = false;
+	if (isNaN(document.getElementById("term").value) || document.getElementById("term").value > 40 || document.getElementById("term").value < 0) {
+  		document.getElementById("termError").innerHTML = "Error: Not a valid number. Term must be between 0 and 40 years";
+      valid2 = false;
+      document.getElementById("term").style.backgroundColor = "#ffcccb";}
+    else {
+    	document.getElementById("termError").innerHTML = ""; 
+      valid2 = true;
+      if (document.getElementById("term").value === "")
+      {
+        blank2 = true;
+        document.getElementById("term").style.backgroundColor = "#ffffff";
+     // valid2 = false;
+      }
+
+      else
+      {
+        blank2 = false;
+        document.getElementById("term").style.backgroundColor = "#90EE90"; }
+      }
+});
+
+document.getElementById("amount").addEventListener("keyup", function(){
+blank3 = false;
+	if (isNaN(document.getElementById("amount").value) || document.getElementById("amount").value < 0) {
+  		document.getElementById("amountError").innerHTML = "Error: Not a valid number";
+      valid3 = false;
+      document.getElementById("amount").style.backgroundColor = "#ffcccb";}
+    else {
+    	document.getElementById("amountError").innerHTML = ""; 
+      valid3 = true;
+      if (document.getElementById("amount").value === "")
+      {
+        blank3 = true;
+        document.getElementById("amount").style.backgroundColor = "#ffffff";
+    //  valid3 = false;
+    }
+  
+      else
+      {
+        blank1 = false;
+        document.getElementById("amount").style.backgroundColor = "#90EE90"; }
+      }
+});
+
+function myFunction() {
+ 
+ {
+   if (valid1 === false)
+   {
+    document.getElementById("demo").innerHTML = "Please insert a valid apr";
+    document.getElementById("apr").focus();
+   }
+   else if (valid2 === false)
+   {
+    document.getElementById("demo").innerHTML = "Please insert a valid term";
+    document.getElementById("term").focus();
+   }
+   else if (valid3 === false)
+   {
+    document.getElementById("demo").innerHTML = "Please insert a valid amount";
+    document.getElementById("amount").focus();
+   }
+   else if (blank1 === true)
+   {
+    document.getElementById("demo").innerHTML = "Please fill in the apr";
+    document.getElementById("apr").focus();
+   }
+   else if (blank2 === true)
+   {
+    document.getElementById("demo").innerHTML = "Please fill in the term";
+    document.getElementById("term").focus();
+   }
+   else if (blank3 === true)
+   {
+    document.getElementById("demo").innerHTML = "Please fill in the amount";
+    document.getElementById("amount").focus();
+   }
+   
+    
+  }     
+} 
+
+document.getElementById("myForm").onreset = function() {focus();}
+function focus() {
+  document.getElementById("apr").focus();
+  document.getElementById("aprError").innerHTML = ""; 
+  document.getElementById("termError").innerHTML = "";
+  document.getElementById("amountError").innerHTML = "";
+  document.getElementById("apr").style.backgroundColor = "#ffffff";
+  document.getElementById("term").style.backgroundColor = "#ffffff";
+  document.getElementById("amount").style.backgroundColor = "#ffffff";
+  var valid1 = true;
+  var valid2 = true;
+  var valid3 = true;
+  var blank1 = true;
+  var blank2 = true;
+  var blank3 = true;
+
+document.getElementById("demo").innerHTML = "";
+}
+
+
+
+</script>
+</body>
+</html>
+

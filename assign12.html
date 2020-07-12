@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Mileage Calculator</title>
+<link rel="stylesheet" type="text/css" href="assign07.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class = "center">
+<h1>Mileage Calculator</h1>
+
+  <form>
+        Start City:<br>
+          <input type="text" name="startCity" id = "startCity" value = "Boise" required><br>
+         
+        Start State:<br>
+          <input type="text" name="startState" id = "startState" value = "ID" pattern= "^[A-Z]{2}$" required><br>
+          
+        Destination City:<br>
+          <input type="text" name="endCity" id = "endCity" value = "Denver" required><br>
+        
+        Destination State:<br>
+          <input type="text" name="endState" id = "endState" value = "CO" pattern= "^[A-Z]{2}$" required><br>
+        
+          
+          <button type="button" onclick="getMileage()">Get Mileage
+</button>
+
+           <p style = "text-align: left; transform: translateX(43%);" id = "demo"></p>
+  </form>
+</div>
+
+<script>
+function getMileage() {
+  var startCity = document.getElementById("startCity").value;
+  var startState = document.getElementById("startState").value;
+  var endCity = document.getElementById("endCity").value;
+  var endState = document.getElementById("endState").value;
+  var mode = "";
+  
+  
+  
+  var url = "/cgi-bin/ercanbracks/mileage/mileageAjaxJSON?startCity=" + startCity + "&startState=" + startState + "&endCity=" + endCity + "&endState=" + endState; 
+  
+  
+  var xhttp;
+  xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myjson = JSON.parse(this.responseText);
+    
+    for (i in myjson.trip.tmode){
+     mode += myjson.trip.tmode[i] + " ";
+  }
+    
+    document.getElementById("demo").innerHTML = "Start City - " + myjson.trip.startcity + "<br>Start State - " + myjson.trip.startstate +"<br>Destination City - " + myjson.trip.endcity + "<br>Destination State - " + myjson.trip.endstate + "<br>Miles - " + myjson.trip.miles + "<br>Mode of tranportation - " + mode;
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+
+</script>
+</body>
+</html>
