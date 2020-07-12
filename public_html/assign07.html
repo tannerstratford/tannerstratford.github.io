@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+<head>
+<link rel="stylesheet" type="text/css" href="assign07.css">
+<title>Mortgage Calculator</title>
+</head>
+<body>
+
+<div class = "center">
+<h2>Mortgage Calculator</h2>
+
+
+    
+       <p>Please use our monthly payment calculator to find out what is affordable to you</p>
+    
+    <form id = "myForm" action = "mortgage.php" method = "get">
+        AP:<br>
+          <input type="text" name="APR" id = "apr"><br>
+          <p id="aprError"></p>
+        Loan Term (in years):<br>
+          <input type="text" name="loan_term" id = "term"><br>
+          <p id="termError"></p>
+        Loan Amount (in dollars):<br>
+          <input type="text" name="loan_payment" id = "amount"><br>
+          <p id="amountError"></p>
+          
+          <p id="demo"></p>
+    
+    <button type="button" onclick="myFunction()">Calculate Monthly Payment</button>
+    
+   
+    
+    <br>
+    
+    <button type="reset" value = "Reset">Clear</button>
+  </form>
+</div>
+
+<script src="assign07.js"></script>
+
+</body>
+</html>
+

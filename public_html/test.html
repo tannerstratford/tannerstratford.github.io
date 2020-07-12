@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Music Festival</title>
+<link rel="stylesheet" type="text/css" href="assign07.css">
+</head>
+<body>
+
+<div class = "center">
+  <h1>Piano Festival Competition Registration</h1>
+</div>
+
+<div class = "center" style = "background-color: skyblue">
+  <form action = "test.php" method = "GET">
+    
+        
+    
+    <input type="submit" value="Register">
+    <button type="reset" name = "clear" value = "Reset">Clear</button>
+
+  </form>
+  
+  <div id = "result"></div>
+  </div>
+
+<script>
+
+
+function submitForm(event) {
+  event.preventDefault();
+
+  let formData = new FormData(theForm);
+  let xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+  if (this.readyState == 4 && this.status == 200) {
+    
+      document.getElementById('result').innerHTML = this.responseText;
+      }
+
+  };
+  xhr.open("GET", "test.php");
+  xhr.send(formData);
+
+
+}
+</script>
+</body>
+</html>

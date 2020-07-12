@@ -1,0 +1,12 @@
+
+  .center {
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: beige;
+  }
+  .slidecontainer {
+  width: 100%;
+}

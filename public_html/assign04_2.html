@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>White Rose Ranch</title>
+  <style>
+
+  img{
+    z-index: 2
+    }
+
+  .center {
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    border: 2px solid black;
+    padding: 10px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 1px;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .box {
+    background-color: beige;  
+    padding: 5px; 
+    border: 2px solid black; 
+    border-radius: 5px;
+    }
+  .parallax {
+  /* The image used */
+  background-image: url("landscape.jpg");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  li {
+    float: left;
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #4caf50;
+  }
+  
+  
+    .mySlides {display:none;}
+  </style>
+</head>
+<body class = "parallax">
+
+  <div class = "center" style = "background-color: beige; background: rgb(245, 245, 220, .5);">
+      
+        <header>
+          <h1 style = "font-size: 400%; color: black; font-family:brush script mt;">White Rose Ranch</h3>
+        </header>
+
+      
+  </div>
+  
+  <div>
+  <ul>
+    <li><a href="assign04.html">Home</a></li>
+    <li><a class = "active" href="assign04_2.html">Shopping</a></li>
+  </ul>
+  </div>
+
+  <hr style = "border-color: black">
+
+  <div style = "text-align: center; font-family: brush script mt; font-size:200%">
+  <blockquote cite = "https://blog.hubspot.com/sales/famous-quotes">
+"The greatest glory in living lies not in never falling, but in <b>rising</b> every time we fall." -Nelson Mandela
+  </blockquote>
+  </div>
+
+  <hr>
+
+  
+
+  <br>
+
+  <div class = "center" style = "background: rgb(245, 245, 220, .8)";>
+    
+      <p>As the business grows we will add more things to sell, but for now we are giving a special deal on <b>shaving soap!</b> Each square of soap is $5 dollars.</p>
+    <form action="action_page.html">
+    
+        Quantity:<br>
+          <input type="text" name="quantity"><br>
+    
+      <p>Please let us know what you'd be interested in buying. Every suggestion helps.</p>
+        <textarea rows="4" cols="50" name="comment">
+        </textarea>
+    
+    <br>
+    <input type="submit" value="Submit">
+    <input type="reset">
+    </form>
+  </div>
+  
+  <div class = "center" style = "border: 0px solid black;">
+    <img src = "shaving_soap.jpg" alt = "shaving soap" style = "width: 30%; background: rgb(245, 245, 220, .5)";>
+  </div>
+    
+  <br>
+    
+  <div>
+    <footer class = "center" style = "background-color: beige; width: 25%;">
+      <p id = "footer">This is the end of my webpage.</p>
+    </footer>
+  </div>
+ 
+
+</body>
+</html>

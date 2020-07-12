@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div>
+
+<h2>Select your city</h2>
+
+<button type="button" onclick="loadDoc('usa.txt', myFunction)">USA
+</button>
+
+<button type="button" onclick="loadDoc('mexico.txt', myFunction)">Mexico
+</button>
+
+<button type="button" onclick="loadDoc('canada.txt', myFunction)">Canada
+</button>
+
+<button type="button" onclick="loadDoc('russia.txt', myFunction)">Russia
+</button>
+
+<pre id = "demo">
+</div>
+
+<div>
+<h2>Enter your file</h2>
+
+<input type="text" id = "link" value = "json.txt"></input>
+
+<button type="button" onclick="loadInfo()">Get Info</button>
+
+<p id="displayInfo"></p>
+<script src = "assign09.js"></script>
+</body>
+</html>
